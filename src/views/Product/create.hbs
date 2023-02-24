@@ -1,0 +1,79 @@
+<header>
+	<nav class="navbar navbar-expand-lg bg-light ">
+		<div class="container-fluid">
+	    <a class="navbar-brand" href="#">Users</a>
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+	        <li class="nav-item">
+	          	<a class="nav-link" href="/user/getAll">
+	          	Todos
+	      		</a>
+	        </li>
+	        <li class="nav-item">
+	          	<a class="nav-link" href="/user/create">Crear +</a>
+	        </li>	     
+	      </ul>
+	      <form class="d-flex" role="search" action="/user/search">
+	        <input class="form-control me-2" type="search" placeholder="Buscar User" aria-label="Search" name="q">
+	        <button class="btn btn-outline-success" type="submit">Buscar</button>
+	      </form>
+	</nav>
+	</div>
+</header>
+
+<main  class="container row row-cols" >
+    <h2>Crear Usuario</h2>
+	<form class="m-4" id="createUserForm">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombreHelp" placeholder="Daniel">
+            <small id="nombreHelp" class="form-text text-muted">Tu nombre debe tener entre 2 y 40 caracteres</small>
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" aria-describedby="apellidoHelp" placeholder="Perez">
+            <small id="apellidoHelp" class="form-text text-muted">Tu apellido debe tener entre 2 y 40 caracteres</small>
+        </div>
+        <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type="text" class="form-control" id="dni" name="dni" aria-describedby="dniHelp" placeholder="Perez">
+            <small id="dniHelp" class="form-text text-muted">Tu DNI debe tener entre 7 y 8 digitos</small>
+        </div>
+        <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" class="form-control" id="edad" name="edad" aria-describedby="edadHelp" placeholder="26">
+            <small id="edadHelp" class="form-text text-muted">Tu edad debe ser entre 18 y 120 años</small>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="mail@ejemplo.com">
+            <small id="emailHelp" class="form-text text-muted">Ingresa una contraseña segura</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" aria-describedby="passHelp" placeholder="*******">
+            <small id="passHelp" class="form-text text-muted">Ingresa una contraseña segura</small>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Crear Usuario</button>
+    </form>
+</main>
+
+<div class="modal" tabindex="-1" role="dialog" id="userCreatedModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Usuario Creado</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>El usuario fue creado exitosamente con el el id: <span id="userCreatedId"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary aceptar">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/createUserForm.js"></script>
